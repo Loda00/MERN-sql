@@ -8,12 +8,12 @@ module.exports = {
     resolve: {
         extensions: ['.js','.jsx','.ts','.tsx']
     },
-    mode: 'development',
+    // mode: 'development',
     context: path.resolve(__dirname, 'src'),
     entry: './app/index.jsx',
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: './js/[name].bundle.js'
+        path: path.join(__dirname, 'public'),
+        filename: './[name].bundle.js'
     },
     cache: true,
     module: {
@@ -42,19 +42,19 @@ module.exports = {
         ]
     },
     devtool: 'inline-source-map',
-    devServer: {
-        compress: true,
-        port: 2020,
-        open: true,
-        contentBase: path.resolve(__dirname, 'public')
-    },
-    plugins: [
-        new cleanWebpackPlugin(['dist']),
-        new miniCssExtractPlugin({
-            filename: './public/styles.css'
-        }),
-        new htmlWebpackPlugin({
-            template: path.resolve(__dirname, 'public/index.html')
-        })
-    ]
+    // devServer: {
+    //     compress: true,
+    //     port: 2020,
+    //     open: true,
+    //     contentBase: path.resolve(__dirname, 'public')
+    // },
+    // plugins: [
+    //     new cleanWebpackPlugin(['dist']),
+    //     new miniCssExtractPlugin({
+    //         filename: './public/styles.css'
+    //     }),
+    //     new htmlWebpackPlugin({
+    //         template: path.resolve(__dirname, 'public/index.html')
+    //     })
+    // ]
 }

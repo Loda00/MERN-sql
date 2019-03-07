@@ -8,9 +8,9 @@ class Main extends React.Component {
         }
     }
 
-
     render(){
         const { title } = this.state
+
         return(
             <div>{title}</div>
         )
