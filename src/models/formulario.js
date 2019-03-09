@@ -41,6 +41,38 @@ class Formulario {
         return res
     }
 
+    async wdf() {
+        const client = await this.pool.connect()
+        let res = null
+        try {
+            res = await client.query(`select * from tB_motivo`)
+            await client.query('COMMIT')
+        } catch (error) {
+            await client.query('ROLLBACK')
+            throw new Error(error)
+        } finally {
+            client.release()
+        }
+
+        return res
+    }
+
+    async wdf2() {
+        const client = await this.pool.connect()
+        let res = null
+        try {
+            res = await client.query(`select * from tB_motivo`)
+            await client.query('COMMIT')
+        } catch (error) {
+            await client.query('ROLLBACK')
+            throw new Error(error)
+        } finally {
+            client.release()
+        }
+
+        return res
+    }
+
 }
 
 

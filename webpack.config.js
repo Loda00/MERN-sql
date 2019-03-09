@@ -6,9 +6,9 @@ const path = require('path')
 
 module.exports = {
     resolve: {
-        extensions: ['.js','.jsx','.ts','.tsx']
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
-    // mode: 'development',
+    mode: 'development',
     context: path.resolve(__dirname, 'src'),
     entry: './app/index.jsx',
     output: {
@@ -43,18 +43,19 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     // devServer: {
-    //     compress: true,
-    //     port: 2020,
-    //     open: true,
-    //     contentBase: path.resolve(__dirname, 'public')
+        //     compress: true,
+        //     port: 2020,
+        //     open: true,
+        //     contentBase: path.resolve(__dirname, 'public')
+
     // },
-    // plugins: [
-    //     new cleanWebpackPlugin(['dist']),
-    //     new miniCssExtractPlugin({
-    //         filename: './public/styles.css'
-    //     }),
-    //     new htmlWebpackPlugin({
-    //         template: path.resolve(__dirname, 'public/index.html')
-    //     })
-    // ]
+    plugins: [
+        new cleanWebpackPlugin(['dist']),
+        new miniCssExtractPlugin({
+            filename: '../public/styles.css'
+        }),
+        // new htmlWebpackPlugin({
+        //     template: path.resolve(__dirname, 'public/index.html')
+        // })
+    ]
 }
