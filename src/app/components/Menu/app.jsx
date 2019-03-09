@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './style.sass'
 import { BrowserRouter, Link, Route } from 'react-router-dom'
+import Logo from '../../../../img/logo.jpg'
+import Contacto from '../Contacto/app'
 
 class Main extends React.Component {
 
@@ -22,7 +24,7 @@ class Main extends React.Component {
     }
 
     componentDidMount() {
-        // this.getMotivos()
+        this.getMotivos()
     }
 
     render() {
@@ -33,7 +35,7 @@ class Main extends React.Component {
                 <React.Fragment>
                     <nav>
                         <div className="logo" >
-                            <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" />
+                            <img src={Logo} />
                         </div>
                         <div className="navigation" >
                             <div>
@@ -43,13 +45,13 @@ class Main extends React.Component {
                                 <Link to="/about">About</Link>
                             </div>
                             <div>
-                                <Link to="/topics">Topics</Link>
+                                <Link to="/Contacto">Contacto</Link>
                             </div>
                         </div>
                     </nav>
                     <Route exact path="/" component={Test1} />
                     <Route path="/about" component={Test2} />
-                    <Route path="/topics" component={Test3} />
+                    <Route path="/Contacto" component={Contacto} />
                 </React.Fragment>
             </BrowserRouter>
         )
@@ -68,13 +70,6 @@ function Test2({ match }) {
     return (
         <div>
             <h3>ABOUT</h3>
-        </div>
-    );
-}
-function Test3({ match }) {
-    return (
-        <div>
-            <h3>TOPICS</h3>
         </div>
     );
 }
