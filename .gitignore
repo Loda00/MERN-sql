@@ -1,3 +1,5 @@
-/node_modules
+/node_modules/
 /query.sql
-/dist
+/dist/
+public/*.js
+/public/*.css

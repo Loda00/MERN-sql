@@ -59,7 +59,7 @@ class Main extends React.Component {
 function Test1({ match }) {
     return (
         <div>
-            <h3>HOME</h3>
+            <h3>HOME 1111</h3>
         </div>
     );
 }

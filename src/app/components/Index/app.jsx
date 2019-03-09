@@ -15,7 +15,7 @@ class Index extends React.Component {
 
     render(){
         return (
-            <div>Index</div>
+            <div>Index  test</div>
         )
     }
 }
